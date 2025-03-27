@@ -17,16 +17,16 @@ const About = () => {
             <p>With expertise in modern web technologies and a keen eye for design, I strive to build applications that are not only functional but also visually appealing and user-friendly.</p>
             <p>When I'm not coding, I enjoy volunteering for community projects and participating in various extracurricular activities that help me grow both personally and professionally.</p>
             <div className="about-stats">
-              <div className="stat">
+              {/* <div className="stat">
                 <h3>2+</h3>
                 <p>Years Experience</p>
-              </div>
+              </div> */}
               <div className="stat">
-                <h3>15+</h3>
+                <h3>5+</h3>
                 <p>Projects Completed</p>
               </div>
               <div className="stat">
-                <h3>5+</h3>
+                <h3>10+</h3>
                 <p>Volunteer Programs</p>
               </div>
             </div>
