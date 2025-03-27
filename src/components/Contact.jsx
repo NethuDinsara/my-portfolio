@@ -40,27 +40,27 @@ const Contact = () => {
               <div className="icon">📧</div>
               <div>
                 <h3>Email</h3>
-                <p>yourname@example.com</p>
+                <p>neth.hettihewa@gmail.com</p>
               </div>
             </div>
             <div className="contact-item">
               <div className="icon">📱</div>
               <div>
                 <h3>Phone</h3>
-                <p>+1 (123) 456-7890</p>
+                <p>+94 70 154 3307</p>
               </div>
             </div>
             <div className="contact-item">
               <div className="icon">📍</div>
               <div>
                 <h3>Location</h3>
-                <p>City, Country</p>
+                <p>Kiribathgoda, Western Province</p>
               </div>
             </div>
             <div className="social-links">
               <a href="#" className="social-icon" aria-label="GitHub">GitHub</a>
               <a href="#" className="social-icon" aria-label="LinkedIn">LinkedIn</a>
-              <a href="#" className="social-icon" aria-label="Twitter">Twitter</a>
+              <a href="#" className="social-icon" aria-label="Instagram">Instagram</a>
             </div>
           </div>
           
