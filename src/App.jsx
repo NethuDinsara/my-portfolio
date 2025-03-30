@@ -1,41 +1,59 @@
-// App.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import './App.css';
-import Navbar from './components/NavBar';
-import Hero from './components/Hero';
-import About from './components/About';
+import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
+import Education from './components/Education';
 import Projects from './components/Projects';
-import Activities from './components/Activities';
-import Contact from './components/Contact';
+import Blogs from './components/Blogs';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 function App() {
-  const [scrollY, setScrollY] = useState(0);
+  const aboutMeRef = useRef(null);
+  const skillsRef = useRef(null);
+  const educationRef = useRef(null);
+  const projectsRef = useRef(null);
+  const blogsRef = useRef(null);
+  const footerRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <div className="app">
-      <Navbar scrollY={scrollY} />
-      <main>
-        <Hero />
-        <About />
+    <div className="portfolio-container">
+      <Navbar
+        scrollToAboutMe={() => scrollToSection(aboutMeRef)}
+        scrollToSkills={() => scrollToSection(skillsRef)}
+        scrollToEducation={() => scrollToSection(educationRef)}
+        scrollToProjects={() => scrollToSection(projectsRef)}
+        scrollToBlogs={() => scrollToSection(blogsRef)}
+        scrollToFooter={() => scrollToSection(footerRef)}
+      />
+
+      <header className="hero-section" ref={aboutMeRef}>
+        <AboutMe />
+      </header>
+
+      <section className="skills-section" ref={skillsRef}>
         <Skills />
+      </section>
+
+      <section className="education-section" ref={educationRef}>
+        <Education />
+      </section>
+
+      <section className="projects-section" ref={projectsRef}>
         <Projects />
-        <Activities />
-        <Contact />
-      </main>
-      <Footer />
+      </section>
+
+      <section className="blogs-section" ref={blogsRef}>
+        <Blogs />
+      </section>
+
+      <footer className="footer-section" ref={footerRef}>
+        <Footer />
+      </footer>
     </div>
   );
 }
