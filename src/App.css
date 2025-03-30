@@ -247,6 +247,27 @@ section {
   font-size: 1.25rem;
   margin-bottom: 2rem;
 }
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+}
+
+.image-placeholder {
+  width: 100%; /* Ensure the container scales */
+  max-width: 400px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.image-placeholder img {
+  width: 100%; /* Makes the image responsive */
+  height: auto;
+  object-fit: cover; /* Ensures the image scales properly */
+}
+
+
 
 /* About.css */
 .about-content {
