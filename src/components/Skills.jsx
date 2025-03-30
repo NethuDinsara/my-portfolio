@@ -1,66 +1,32 @@
 import React from 'react';
 
-const Skills = () => {
-  const technicalSkills = [
-    { name: 'React', level: 90 },
-    { name: 'JavaScript', level: 85 },
-    { name: 'HTML/CSS', level: 95 },
-    { name: 'Node.js', level: 75 },
-    { name: 'UI/UX Design', level: 80 },
-    { name: 'Python', level: 70 },
+function Skills() {
+  const skillsList = [
+    { name: 'JavaScript', proficiency: 'Advanced' },
+    { name: 'React', proficiency: 'Advanced' },
+    { name: 'Node.js', proficiency: 'Intermediate' },
+    { name: 'HTML', proficiency: 'Advanced' },
+    { name: 'CSS', proficiency: 'Advanced' },
+    { name: 'Python', proficiency: 'Intermediate' },
+    { name: 'Git', proficiency: 'Proficient' },
+    { name: 'SQL', proficiency: 'Intermediate' },
+    { name: 'Docker', proficiency: 'Basic' },
   ];
-  
-  const softSkills = [
-    'Problem Solving',
-    'Communication',
-    'Teamwork',
-    'Time Management',
-    'Leadership',
-    'Adaptability'
-  ];
-  
+
   return (
-    <section id="skills" className="skills">
-      <div className="container">
-        <h2 className="section-title">My Skills</h2>
-        
-        <div className="skills-container">
-          <div className="technical-skills">
-            <h3>Technical Skills</h3>
-            <div className="skill-bars">
-              {technicalSkills.map((skill, index) => (
-                <div className="skill-item" key={index}>
-                  <div className="skill-info">
-                    <p>{skill.name}</p>
-                    <p>{skill.level}%</p>
-                  </div>
-                  <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
-                      style={{ width: `${skill.level}%` }}
-                      data-aos="width"
-                      data-aos-delay={index * 100}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
+    <div className="skills-section">
+      <h2>Skills</h2>
+      <div className="skills-grid">
+        {skillsList.map((skill, index) => (
+          <div key={index} className="skill-item">
+            <h3>{skill.name}</h3>
+            <p>Proficiency: {skill.proficiency}</p>
+            {/* You could add a visual representation of proficiency here */}
           </div>
-          
-          <div className="soft-skills">
-            <h3>Soft Skills</h3>
-            <div className="soft-skills-grid">
-              {softSkills.map((skill, index) => (
-                <div className="soft-skill-item" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-                  {skill}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
-};
+}
 
 export default Skills;

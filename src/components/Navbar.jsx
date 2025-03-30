@@ -1,29 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Navbar = ({ scrollY }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  
+
+function Navbar({
+  scrollToAboutMe,
+  scrollToSkills,
+  scrollToEducation,
+  scrollToProjects,
+  scrollToBlogs,
+  scrollToFooter,
+}) {
   return (
-    <nav className={`navbar ${scrollY > 50 ? 'navbar-scrolled' : ''}`}>
-      <div className="container navbar-container">
-        <a href="#" className="logo">Dinsara Hettihewa</a>
-        
-        <div className={`menu-toggle ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        
-        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
-          <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
-          <li><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
-          <li><a href="#activities" onClick={() => setMenuOpen(false)}>Activities</a></li>
-          <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
-        </ul>
-      </div>
+    <nav className="navbar">
+      <ul>
+        <li>
+          <button onClick={scrollToAboutMe}>About Me</button>
+        </li>
+        <li>
+          <button onClick={scrollToSkills}>Skills</button>
+        </li>
+        <li>
+          <button onClick={scrollToEducation}>Education</button>
+        </li>
+        <li>
+          <button onClick={scrollToProjects}>Projects</button>
+        </li>
+        <li>
+          <button onClick={scrollToBlogs}>Blogs</button>
+        </li>
+        <li>
+          <button onClick={scrollToFooter}>Footer</button>
+        </li>
+      </ul>
     </nav>
   );
-};
+}
 
 export default Navbar;
