@@ -17,8 +17,8 @@ body {
 
 /* Navbar Styles */
 .navbar {
-  background-color: #2c3e50; /* Dark blue navbar */
-  color: #fff;
+  background-color: #ffffff; /* Dark blue navbar */
+  color: #040449;
   padding: 20px 30px;
   position: sticky;
   top: 0;
@@ -40,13 +40,13 @@ body {
   border: none;
   cursor: pointer;
   font-size: 1.1em;
-  color: #ecf0f1; /* Light gray text */
+  color: #37869a; /* Light gray text */
   transition: color 0.3s ease-in-out;
 }
 
 .navbar li button:hover,
 .navbar li button:focus {
-  color: #3498db; /* Blue hover color */
+  color: #ffffff; /* Blue hover color */
   outline: none;
 }
 

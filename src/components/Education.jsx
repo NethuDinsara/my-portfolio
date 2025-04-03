@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
 
 function Education() {
+  // const [count,setCount] =useState(0);
+  // const increment = ()=>{
+  //   setCount(count+1);
+  // }
+
+  // return(
+  //   <div>
+  //     <p>Count: {count}</p>
+  //     <button onClick={increment}>Obapan</button>
+  //   </div>
+// )
   const educationList = [
     {
-      institution: 'University of Example',
-      degree: 'Bachelor of Science in Computer Science',
-      years: '2018 - 2022',
-      description: 'Graduated with honors, focusing on software engineering, algorithms, and data structures. Actively involved in the programming club and hackathons.',
+      institution: 'University of Westminster',
+      degree: 'Bachelor of Engineering in Software Engineering',
+      years: '2023 - 2027',
+      description: 'Second year undergraduate in Software engineering , covering the key software engineering principles, server-side web development , OOP conepts , Data Structures and Algorithms along with having hands on experience with several Tech stacks such as, React, Angular, React Native expo, Springboot, Node, PHP, etc; ',
     },
     {
-      institution: 'Online Course Platform',
-      degree: 'Advanced React Development Certificate',
+      institution: 'D.S.Senanayake College, Colombo 07',
+      degree: 'Advanced Level - Biological Stream',
       years: '2022 - 2023',
       description: 'Completed an intensive online program covering advanced React concepts, state management (Redux, Context API), testing, and performance optimization.',
     },
