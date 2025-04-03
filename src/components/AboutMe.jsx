@@ -11,7 +11,7 @@ function AboutMe() {
       style={{ transform: isHovered ? 'scale(1.03)' : 'scale(1)', transition: 'transform 0.3s ease-in-out' }}
     >
       <h2>About Me</h2>
-      <img src="https://via.placeholder.com/200/3498db/FFFFFF?Text=JD" alt="Your Profile" />
+      <img src="src/assets/images/dinsara.png" alt="Your Profile" />
       <p>
         Hello! I'm John Doe, a passionate and creative full-stack developer with a strong foundation in building scalable and user-friendly web applications. My journey in the world of technology began with a fascination for problem-solving and a desire to bring ideas to life through code.
       </p>
