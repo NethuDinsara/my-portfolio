@@ -5,6 +5,7 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import Certificates from './components/Certificates'
+import Extracurricular from './components/Extracurricular'
 import Blogs from './components/Blogs';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -46,6 +47,10 @@ function App() {
 
       <section className="projects-section" ref={projectsRef}>
         <Projects />
+      </section>
+
+      <section className="extra-section" ref={projectsRef}>
+        <Extracurricular/>
       </section>
 
       <section className="certificates-section" ref={projectsRef}>
