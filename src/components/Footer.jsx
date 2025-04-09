@@ -1,16 +1,55 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faLinkedin,
+  faGithub,
+  faInstagram, // Import the Instagram icon
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
   return (
     <footer className="footer-section">
-      <p>&copy; {new Date().getFullYear()} John Doe. All rights reserved.</p>
+      <p className="copyright">
+        &copy; {new Date().getFullYear()} Dinsara Hettihewa. All rights reserved.
+      </p>
       <div className="social-links">
-        <a href="https://www.linkedin.com/in/johndoe" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
-        <a href="https://github.com/johndoe" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i className="fab fa-github"></i></a>
-        <a href="https://twitter.com/johndoe" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-        <a href="mailto:john.doe@example.com" aria-label="Email"><i className="fas fa-envelope"></i></a>
+        <a
+          href="https://www.linkedin.com/in/yourlinkedinprofile" // Replace with your actual LinkedIn URL
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          className="social-icon linkedin"
+        >
+          <FontAwesomeIcon icon={faLinkedin} />
+        </a>
+        <a
+          href="https://github.com/yourgithubprofile" // Replace with your actual GitHub URL
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          className="social-icon github"
+        >
+          <FontAwesomeIcon icon={faGithub} />
+        </a>
+        <a
+          href="https://www.instagram.com/yourinstagramhandle" // Replace with your actual Instagram URL
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          className="social-icon instagram" // Update the class name
+        >
+          <FontAwesomeIcon icon={faInstagram} />
+        </a>
+        <a
+          href="mailto:neth.hettihewa@gmail.com"
+          aria-label="Email"
+          className="social-icon email"
+        >
+          <FontAwesomeIcon icon={faEnvelope} />
+        </a>
       </div>
-      <p>Contact: john.doe@example.com</p>
+      <p className="contact-email">Contact: <a href="mailto:neth.hettihewa@gmail.com">neth.hettihewa@gmail.com</a></p>
     </footer>
   );
 }
