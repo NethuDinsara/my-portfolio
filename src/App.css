@@ -5,26 +5,29 @@ body {
   line-height: 1.7;
   color: #333;
   background-color: #f8f8f8; /* Light gray background */
-  
+
 }
 
 .portfolio-container {
-  /* max-width: 1200px; */
+  max-width: 1800px;
   margin: 0 auto;
   padding: 0;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
 
-/* Navbar Styles */
+/* app.css */
+
 .navbar {
-  background-color: #ffffff; /* Dark blue navbar */
-  color: #040449;
-  padding: 20px 30px;
-  position: sticky;
+  background-color: rgba(253, 253, 253, 0.9); /* Semi-transparent purple (consistent with your theme) */
+  backdrop-filter: blur(10px); /* Nice frosted glass effect */
+  position: fixed; /* Stick to the top */
   top: 0;
-  z-index: 1000;
-  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); */
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Ensure it's on top of other content */
+  padding: 15px 20px; /* Add some padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .navbar ul {
@@ -32,364 +35,818 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  justify-content: center; /* Center the navigation items */
+  align-items: center;
 }
 
-.navbar li button {
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar button {
   background: none;
   border: none;
+  color: #000000; /* Light text color */
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  font-size: 1.1em;
-  color: #37869a; /* Light gray text */
-  transition: color 0.3s ease-in-out;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative; /* For the cool underline effect */
 }
 
-.navbar li button:hover,
-.navbar li button:focus {
-  color: #ffffff; /* Blue hover color */
-  outline: none;
+.navbar button:hover {
+  color: #21a593; /* Lighter purple on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
 }
+
+/* Cool Underline Effect */
+.navbar button::before {
+  content: '';
+  position: absolute;
+  bottom: 2px; /* Adjust position of the underline */
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #49c8b7; /* Pink underline (consistent with your theme) */
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar button:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* Active State (Optional - if you want to highlight the current section) */
+.navbar button.active {
+  color: #F8BBD0; /* Highlight the active button */
+  font-weight: bold;
+}
+
+.navbar button.active::before {
+  width: 100%;
+  left: 0;
+  background-color: #9D50BB; /* A different color for the active underline */
+}
+
+/* Responsive adjustments (if needed for smaller screens) */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .navbar button {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* app.css */
 
 /* app.css */
 
 .about-me-section {
   background-color: #f8f8f8; /* Light background */
   border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+  padding: 40px; /* Increased padding */
+  margin: 40px auto; /* Center horizontally with more margin */
+  
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: flex;
-  align-items: center; /* Align image and text vertically */
-  gap: 20px; /* Space between image and text */
-}
-
-.about-me-section:hover {
-  transform: scale(1.05); /* Slightly larger on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
-}
-
-.about-me-content {
-  flex: 1; /* Allow text content to take remaining space */
+  align-items: center; /* Vertically align text and image */
+  gap: 40px; /* Increased gap between text and image */
   text-align: left; /* Align text to the left */
 }
 
-.about-me-content h2 {
-  color: #333; /* Dark heading */
-  margin-bottom: 15px;
-  font-size: 1.8rem;
+.about-me-section:hover {
+  transform: scale(1.04); /* Slightly more noticeable scale */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.about-me-content {
+  flex: 1; /* Allow text to take up available space */
+}
+
+.about-me-content h2 { /* If you decide to add a title */
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
 }
 
 .about-me-content p {
-  color: #555; /* Medium gray text */
-  line-height: 1.6;
-  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.7; /* Improved line height for readability */
+  margin-bottom: 25px; /* Increased margin between paragraphs */
+  font-size: 1.1rem; /* Slightly larger font size */
+}
+
+.about-me-content .hover-container {
+  margin-top: 20px; /* Space above the hover message */
+}
+
+.about-me-content .hover-message {
+  color: #50a2bb; /* Purple hover message */
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
   font-size: 1rem;
 }
 
+.about-me-section:hover .about-me-content .hover-message {
+  opacity: 1;
+}
+
 .about-me-section img {
-  width: 150px; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Optional: slight rounded corners */
-  object-fit: cover; /* Cover the container without distortion */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Adjust image width as needed */
+  height: auto;
+  border-radius: 10px; /* Soft rounded corners for the image */
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease-in-out;
 }
 
 .about-me-section:hover img {
-  transform: scale(1.05); /* Slightly zoom image on hover */
+  transform: scale(1.02); /* Slight zoom on image hover */
 }
 
-.hover-container {
-  position: relative; /* For positioning the hover message */
-}
-
-.hover-message {
-  color: #9D50BB; /* Purple hover message */
-  font-weight: bold;
-  position: absolute;
-  bottom: -20px; /* Adjust position as needed */
-  left: 0;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
-  width: 100%;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.about-me-section:hover .hover-message {
-  opacity: 1; /* Fade in on hover */
-  bottom: -10px; /* Move up slightly on hover */
-}
-
-/* Optional: Add a subtle animation for the initial load */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-me-section {
+    flex-direction: column; /* Stack text and image on smaller screens */
+    text-align: center;
+    padding: 30px;
+    margin: 20px;
+    gap: 30px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .about-me-content {
+    text-align: center;
+  }
+
+  .about-me-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .about-me-section img {
+    width: 200px; /* Smaller image on smaller screens */
   }
 }
 
-.about-me-section {
-  animation: fadeIn 0.5s ease-out;
-}
-
-/* Skills Section */
+/* Skills Section - Improved Interactive Styles */
 .skills-section {
   padding: 80px 30px;
   text-align: center;
-  background-color: #f0f4f8; /* Light blue-gray */
+  background-color: #000000; /* Light blue-gray */
+  position: relative; /* For absolute positioning of background elements */
+  overflow: hidden; /* Clip any overflowing background elements */
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(157, 80, 187, 0.1) 0%, rgba(195, 129, 217, 0.1) 100%); /* Subtle purple gradient background */
+  z-index: -1; /* Place behind content */
 }
 
 .skills-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #2c3e50;
+  font-size: 2.75em; /* Slightly larger */
+  margin-bottom: 50px;
+  color: #50a2bb; /* Darker text */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #21a593; /* Purple underline */
 }
 
 .skills-carousel-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
 }
 
 .skills-carousel {
   display: flex;
-  gap: 20px;
-  overflow-x: auto; /* Enable horizontal scrolling if needed for many skills */
-  scroll-snap-type: x mandatory; /* Optional: Makes scrolling snap to items */
-  padding-bottom: 15px; /* Make space for scrollbar if visible */
+  gap: 25px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
 }
 
 .skills-carousel::-webkit-scrollbar {
-  height: 5px;
+  height: 8px;
 }
 
 .skills-carousel::-webkit-scrollbar-thumb {
   background-color: #aaa;
-  border-radius: 2.5px;
+  border-radius: 4px;
 }
 
 .skills-carousel::-webkit-scrollbar-track {
   background-color: #eee;
-  border-radius: 2.5px;
+  border-radius: 4px;
 }
 
 .skill-item {
-  padding: 20px 30px; /* Increased padding for better box appearance */
-  border-radius: 8px;
+  padding: 25px;
+  border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease-in-out;
-  flex-shrink: 0; /* Prevent items from shrinking */
-  width: auto; /* Adjust width as needed */
-  min-width: 120px; /* Minimum width for each skill item */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  flex-shrink: 0;
+  width: auto;
+  min-width: 140px; /* Slightly wider */
   text-align: center;
-  border: 1px solid #ddd; /* Added a border for the box effect */
+  border: 1px solid #e0e0e0;
 }
 
 .skill-item:hover,
 .skill-item:focus {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px); /* More pronounced lift */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.skill-image {
+  width: 60px; /* Slightly larger image */
+  height: 60px;
+  margin-bottom: 15px;
+  border-radius: 8px; /* Soften image corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .skill-item h3 {
-  font-size: 1.3em;
-  margin-bottom: 0; /* Removed margin for cleaner look */
-  color: #2c3e50;
+  font-size: 1.4em;
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+.skill-percentage {
+  font-size: 0.9em;
+  color: #777;
+  display: block;
 }
 
 .carousel-navigation {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .carousel-navigation button {
   background: none;
-  border: none;
-  font-size: 1.2em;
+  border: 2px solid #21a593; /* Purple border for buttons */
+  font-size: 1.4em;
   cursor: pointer;
-  color: #777;
-  padding: 5px 10px;
-  transition: color 0.3s ease-in-out;
+  color: #21a593;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  outline: none; /* Remove default focus outline */
 }
 
 .carousel-navigation button:hover,
 .carousel-navigation button:focus {
-  color: #3498db;
-  outline: none;
+  background-color: #21a593;
+  color: #fff;
+}
+
+.carousel-navigation button:disabled {
+  border-color: #ccc;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.carousel-navigation button:disabled:hover {
+  background-color: transparent;
+  color: #ccc;
 }
 
 .page-indicator {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: #ccc;
-  border: none;
+  border: 2px solid transparent; /* Add a transparent border for hover effect */
   cursor: pointer;
-  margin: 0 5px;
-  transition: background-color 0.3s ease-in-out;
+  margin: 0 8px;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  outline: none;
 }
 
 .page-indicator.active {
-  background-color: #3498db;
+  background-color: #21a593;
+  border-color: #21a593;
 }
 
 .page-indicator:hover,
 .page-indicator:focus {
-  background-color: #3498db;
-  outline: none;
+  background-color: #21a593;
+  border-color: #21a593;
 }
 
-/* Responsive adjustments for skills carousel */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .skills-carousel {
-    gap: 10px;
+  .skills-section {
+    padding: 60px 20px;
   }
+
+  .skills-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+
+  .skills-carousel {
+    gap: 15px;
+    padding-bottom: 10px;
+  }
+
   .skill-item {
-    min-width: 100px;
-    padding: 15px;
-    font-size: 0.9em;
+    min-width: 110px;
+    padding: 18px;
+  }
+
+  .skill-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .skill-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+
+  .carousel-navigation button {
+    font-size: 1.2em;
+    padding: 6px 12px;
+  }
+
+  .page-indicator {
+    width: 10px;
+    height: 10px;
+    margin: 0 6px;
   }
 }
 
-/* Education Section */
+/* Education Section - Improved Styles */
+/* Education Section - Improved Styles */
 .education-section {
   padding: 80px 30px;
-  background-color: #e3f2fd; /* Light blue */
+  background-color: #f9fcfc; /* Very light teal */
 }
 
 .education-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #2c3e50;
-  text-align: left;
+  font-size: 2.75em;
+  margin-bottom: 50px;
+  color: #50a2bb; /* Primary teal */
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #50a2bb; /* Lighter teal underline */
 }
 
 .education-item {
   margin-bottom: 40px;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  border: 1px solid #50a2bb; /* Light teal border */
+  transition: transform 0.2s ease-in-out;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .education-item h3 {
-  font-size: 1.6em;
+  font-size: 1.8em;
   margin-top: 0;
   margin-bottom: 15px;
-  color: #2c3e50;
+  color: #50a2bb; /* Primary teal */
 }
 
-.education-item p {
-  color: #666;
+.education-item .degree {
+  color: #50a2bb; /* Medium teal */
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
-/* Projects Section */
-.projects-section {
-  padding: 80px 30px;
-  background-color: #f9fbe7; /* Light yellow-green */
+.education-item .years {
+  color: #50a2bb; /* Light teal */
+  font-style: italic;
+  margin-bottom: 20px;
 }
 
-.projects-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #2c3e50;
-  text-align: left;
+.education-item .description {
+  color: #546e7a; /* Dark grayish teal */
+  line-height: 1.6;
+  margin-bottom: 20px;
+  border-left: 3px solid #6dd6c1; /* Lighter teal highlight */
+  padding-left: 15px;
 }
 
-.project-filters {
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-.project-filters button {
-  padding: 12px 25px;
-  margin-right: 15px;
+.education-item button {
+  background-color: #50a2bb; /* Primary teal */
+  color: #fff;
   border: none;
+  padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 1em;
-  background-color: #3498db; /* Blue button */
-  color: #fff;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  outline: none;
+}
+
+.education-item button:hover,
+.education-item button:focus {
+  background-color: #4db6ac; /* Medium teal */
+}
+
+.education-item button:active {
+  background-color: #187968; /* Darker teal on active */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .education-section {
+    padding: 60px 20px;
+  }
+
+  .education-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+
+  .education-item {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .education-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .education-item .description {
+    font-size: 0.95em;
+    padding-left: 10px;
+    border-left-width: 2px;
+  }
+
+  .education-item button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}
+
+/* Projects Section - Updated for Modal */
+.projects-section {
+  padding: 80px 30px;
+  background-color: #f9fbe7; /* Light yellow-green */
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2.75em;
+  margin-bottom: 50px;
+  color: #388e3c; /* Darker green */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #81c784; /* Lighter green underline */
+}
+
+.project-filters {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.project-filters button {
+  padding: 14px 30px;
+  border: 2px solid #4caf50; /* Green border */
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  background-color: transparent;
+  color: #4caf50;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  outline: none;
 }
 
 .project-filters button.active {
-  background-color: #2980b9;
+  background-color: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
 }
 
 .project-filters button:hover,
 .project-filters button:focus {
-  background-color: #2980b9;
-  transform: scale(1.05);
-  outline: none;
+  background-color: #4caf50;
+  color: #fff;
+  transform: scale(1.08);
 }
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust min width */
+  gap: 30px;
 }
 
-.project-card {
-  border-radius: 10px;
+/* مختصر Project Card Style */
+.project-card{
+  border-radius: 12px;
   overflow: hidden;
   background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  text-align: center; /* Center content within the card */
+  /* width: auto;
+  height: auto; */
 }
 
 .project-card:hover,
 .project-card:focus {
-  transform: translateY(-8px);
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .project-card img {
   width: 100%;
   height: auto;
   display: block;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.project-card-content {
-  padding: 30px;
+.project-card h3 {
+  font-size: 1.4em;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #388e3c;
 }
 
-.project-card-content h3 {
-  font-size: 1.5em;
+.project-card.view-more-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  outline: none;
+}
+
+.project-card .view-more-btn:hover,
+.project-card .view-more-btn:focus {
+  background-color: #43a047;
+  transform: scale(1.05);
+}
+
+/* Project Modal Styles */
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of everything */
+}
+
+.project-modal .modal-content {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  max-width: 80%; /* Adjust max width as needed */
+  max-height: 80%;
+  overflow-y: auto; /* Enable scrolling for long content */
+  position: relative;
+}
+
+.project-modal .modal-content h3 {
+  font-size: 2em;
   margin-top: 0;
-  margin-bottom: 15px;
-  color: #2c3e50;
+  margin-bottom: 20px;
+  color: #388e3c;
 }
 
-.project-card-content p {
-  color: #666;
+.project-modal .modal-content p {
+  color: #555;
+  line-height: 1.7;
   margin-bottom: 20px;
 }
 
-.project-card-content a {
+.project-modal .modal-content a {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #27ae60; /* Green view button */
+  padding: 12px 25px;
+  background-color: #4caf50;
   color: #fff;
   text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s ease-in-out;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  margin-bottom: 20px;
 }
 
-.project-card-content a:hover,
-.project-card-content a:focus {
-  background-color: #219653;
+.project-modal .modal-content a:hover,
+.project-modal .modal-content a:focus {
+  background-color: #43a047;
+  transform: scale(1.05);
+}
+
+.project-modal .close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 1.5em;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.project-modal .close-modal-btn:hover,
+.project-modal .close-modal-btn:focus {
+  color: #333;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 768px) {
+  .project-modal .modal-content {
+    padding: 30px;
+    max-width: 95%;
+    max-height: 90%;
+  }
+
+  .project-modal .modal-content h3 {
+    font-size: 1.8em;
+  }
+
+  .project-modal .modal-content p {
+    font-size: 0.95em;
+  }
+
+  .project-modal .close-modal-btn {
+    font-size: 1.2em;
+  }
+}
+
+/* Extracurricular Section Styles */
+.extracurricular-section {
+  padding: 80px 30px;
+  background-color: #f4f4f4; /* Light gray background */
+  text-align: center;
+}
+
+.extracurricular-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #007bff; /* Blue underline */
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.activity-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.activity-header {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.activity-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.activity-header h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.expand-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease-in-out;
+  outline: none;
+}
+
+.expand-button:hover {
+  background-color: #0056b3;
+}
+
+.activity-details {
+  padding: 20px;
+  text-align: left;
+  border-top: 1px solid #eee;
+}
+
+.activity-details p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Expanded state */
+.activity-card.expanded .activity-header {
+  border-bottom: 1px solid #eee;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .extracurricular-section {
+    padding: 60px 20px;
+  }
+
+  .extracurricular-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .activity-header {
+    padding: 15px;
+  }
+
+  .activity-image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .activity-header h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+
+  .expand-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .activity-details {
+    padding: 15px;
+    font-size: 0.95em;
+  }
 }
 
 /* Blogs Section */
