@@ -1,32 +1,35 @@
 import React, { useState } from 'react';
+import alphaImg from '../assets/images/alpha.png'
+import portFImg from '../assets/images/portfolio.png'
+import babbleImg from '../assets/images/babble.png'
 
 const projectsData = [
   {
     id: 1,
-    name: 'E-commerce Platform',
+    name: 'Landing Page for Alpha Medi Lab',
     category: 'Web',
     description: 'A full-stack e-commerce platform allowing users to browse products, add to cart, and process orders. Implemented user authentication and admin dashboard.',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+    technologies: ['React'],
     link: '#',
-    image: 'https://via.placeholder.com/600/3498db/FFFFFF?Text=E-commerce%20Platform',
+    image: alphaImg,
   },
   {
     id: 2,
-    name: 'Mobile Task Manager App',
+    name: 'Supporting App for Kids with Speaking Disabilities',
     category: 'Mobile',
     description: 'A mobile application built with React Native to help users manage their daily tasks, set reminders, and track progress.',
-    technologies: ['React Native', 'Firebase'],
+    technologies: ['React Native Expo','Node.js','express','mongodb','ML models', 'Firebase','Version Control'],
     link: '#',
-    image: 'https://via.placeholder.com/600/2ecc71/FFFFFF?Text=Task%20Manager%20App',
+    image: babbleImg,
   },
   {
     id: 3,
-    name: 'Data Visualization Dashboard',
+    name: 'Real Time Ticketing System',
     category: 'Web',
     description: 'A web-based dashboard for visualizing and analyzing sales data using interactive charts and graphs.',
-    technologies: ['React', 'Chart.js', 'Python', 'Flask'],
+    technologies: ['SpringBoot','Angular','mySQL','OOP','Threads'],
     link: '#',
-    image: 'https://via.placeholder.com/600/e67e22/FFFFFF?Text=Data%20Dashboard',
+    image: alphaImg,
   },
   {
     id: 4,
@@ -35,16 +38,52 @@ const projectsData = [
     description: 'My personal portfolio website to showcase my skills, projects, and blog posts. Built with React and styled with modern CSS.',
     technologies: ['React', 'CSS', 'Vite'],
     link: '#',
-    image: 'https://via.placeholder.com/600/9b59b6/FFFFFF?Text=Portfolio%20Website',
+    image: portFImg,
+  },
+  {
+    id: 5,
+    name: 'Personal Finance Tracker',
+    category: 'Web',
+    description: 'My personal portfolio website to showcase my skills, projects, and blog posts. Built with React and styled with modern CSS.',
+    technologies: ['React', 'CSS', 'Vite','Springboot'],
+    link: '#',
+    image: alphaImg,
+  },
+  {
+    id: 6,
+    name: 'Echo Friendly App Design(echofy)',
+    category: 'Other',
+    description: 'My personal portfolio website to showcase my skills, projects, and blog posts. Built with React and styled with modern CSS.',
+    technologies: ['Figma'],
+    link: '#',
+    image: alphaImg,
+  },
+  {
+    id: 7,
+    name: 'Sundown Motor Fest Landing Page',
+    category: 'Web',
+    description: 'My personal portfolio website to showcase my skills, projects, and blog posts. Built with React and styled with modern CSS.',
+    technologies: ['React'],
+    link: '#',
+    image: alphaImg,
   },
 ];
 
 function Projects() {
   const [filter, setFilter] = useState('All');
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const filteredProjects = filter === 'All'
     ? projectsData
     : projectsData.filter(project => project.category === filter);
+
+  const handleViewMore = (project) => {
+    setSelectedProject(project);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+  };
 
   return (
     <div className="projects-section">
@@ -55,19 +94,35 @@ function Projects() {
         <button onClick={() => setFilter('Mobile')} className={filter === 'Mobile' ? 'active' : ''}>Mobile</button>
         <button onClick={() => setFilter('Other')} className={filter === 'Other' ? 'active' : ''}>Other</button>
       </div>
-      <div className="project-list">
+      <div
+        className="project-list"
+        style={{
+          gridTemplateColumns:
+            filteredProjects.length === 1
+              ? 'minmax(300px, auto)' // Adjust minmax as needed
+              : 'repeat(auto-fit, minmax(300px, 1fr))',
+        }}
+      >
         {filteredProjects.map(project => (
           <div key={project.id} className="project-card">
             <img src={project.image} alt={project.name} />
-            <div className="project-card-content">
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <p>Technologies: {project.technologies.join(', ')}</p>
-              <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
-            </div>
+            <h3>{project.name}</h3>
+            <button className="view-more-btn" onClick={() => handleViewMore(project)}>View More</button>
           </div>
         ))}
       </div>
+      
+      {selectedProject && (
+        <div className="project-modal">
+          <div className="modal-content">
+            <h3>{selectedProject.name}</h3>
+            <p>{selectedProject.description}</p>
+            <p>Technologies: {selectedProject.technologies.join(', ')}</p>
+            <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">View Project</a>
+            <button className="close-modal-btn" onClick={handleCloseModal}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
