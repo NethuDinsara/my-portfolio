@@ -18,16 +18,16 @@ body {
 
 /* app.css */
 
+/* Navbar Styles */
 .navbar {
-  background-color: rgba(253, 253, 253, 0.9); /* Semi-transparent purple (consistent with your theme) */
-  backdrop-filter: blur(10px); /* Nice frosted glass effect */
+  background-color: #ffffff; /* Consistent background with About Me */
   position: fixed; /* Stick to the top */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100; /* Ensure it's on top of other content */
-  padding: 15px 20px; /* Add some padding */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 100;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar ul {
@@ -35,7 +35,7 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center; /* Center the navigation items */
+  justify-content: center;
   align-items: center;
 }
 
@@ -46,30 +46,29 @@ body {
 .navbar button {
   background: none;
   border: none;
-  color: #000000; /* Light text color */
+  color: #000000; /* Darker text for better readability */
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   padding: 10px 15px;
   border-radius: 5px;
   transition: color 0.3s ease, transform 0.3s ease;
-  position: relative; /* For the cool underline effect */
+  position: relative;
 }
 
 .navbar button:hover {
-  color: #21a593; /* Lighter purple on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
+  color: #007bff; /* Teal hover color */
+  transform: translateY(-2px);
 }
 
-/* Cool Underline Effect */
 .navbar button::before {
   content: '';
   position: absolute;
-  bottom: 2px; /* Adjust position of the underline */
+  bottom: 2px;
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #49c8b7; /* Pink underline (consistent with your theme) */
+  background-color: #007bff; /* Teal underline */
   transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
@@ -78,23 +77,22 @@ body {
   left: 0;
 }
 
-/* Active State (Optional - if you want to highlight the current section) */
 .navbar button.active {
-  color: #F8BBD0; /* Highlight the active button */
+  color: #007bff; /* Darker teal for active */
   font-weight: bold;
 }
 
 .navbar button.active::before {
   width: 100%;
   left: 0;
-  background-color: #9D50BB; /* A different color for the active underline */
+  background-color: #007bff;
 }
 
-/* Responsive adjustments (if needed for smaller screens) */
 @media (max-width: 768px) {
   .navbar ul {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
   .navbar li {
@@ -106,52 +104,51 @@ body {
     text-align: center;
   }
 }
-/* app.css */
 
-/* app.css */
-
+/* About Me Section Styles - Consistent with Navbar Background */
 .about-me-section {
-  background-color: #f8f8f8; /* Light background */
+  background-color: #f8f8f8; /* Consistent background */
   border-radius: 10px;
-  padding: 40px; /* Increased padding */
-  margin: 40px auto; /* Center horizontally with more margin */
-  
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  padding: 40px;
+  margin: 80px auto 40px auto; /* Add top margin to account for fixed navbar */
+  max-width: 960px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: flex;
-  align-items: center; /* Vertically align text and image */
-  gap: 40px; /* Increased gap between text and image */
-  text-align: left; /* Align text to the left */
+  align-items: center;
+  gap: 40px;
+  text-align: left;
 }
 
 .about-me-section:hover {
-  transform: scale(1.04); /* Slightly more noticeable scale */
+  transform: scale(1.04);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .about-me-content {
-  flex: 1; /* Allow text to take up available space */
+  flex: 1;
 }
 
-.about-me-content h2 { /* If you decide to add a title */
-  color: #2c3e50;
+.about-me-content h2 {
+  color: #333; /* Darker title */
   margin-bottom: 20px;
   font-size: 2.2rem;
+  text-align: center; /* Center the title */
 }
 
 .about-me-content p {
   color: #555;
-  line-height: 1.7; /* Improved line height for readability */
-  margin-bottom: 25px; /* Increased margin between paragraphs */
-  font-size: 1.1rem; /* Slightly larger font size */
+  line-height: 1.7;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
 }
 
 .about-me-content .hover-container {
-  margin-top: 20px; /* Space above the hover message */
+  margin-top: 20px;
 }
 
 .about-me-content .hover-message {
-  color: #50a2bb; /* Purple hover message */
+  color: #007bff; /* Teal hover message */
   font-weight: bold;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -162,30 +159,33 @@ body {
   opacity: 1;
 }
 
-.about-me-section img {
-  width: 300px; /* Adjust image width as needed */
+.about-me-section .profile-image {
+  width: 300px;
   height: auto;
-  border-radius: 10px; /* Soft rounded corners for the image */
+  border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease-in-out;
 }
 
-.about-me-section:hover img {
-  transform: scale(1.02); /* Slight zoom on image hover */
+.about-me-section:hover .profile-image {
+  transform: scale(1.02);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .about-me-section {
-    flex-direction: column; /* Stack text and image on smaller screens */
+    flex-direction: column;
     text-align: center;
     padding: 30px;
-    margin: 20px;
+    margin: 60px 20px 30px 20px; /* Adjust top margin for smaller screens */
     gap: 30px;
   }
 
   .about-me-content {
+    text-align: center;
+  }
+
+  .about-me-content h2 {
     text-align: center;
   }
 
@@ -194,8 +194,8 @@ body {
     margin-bottom: 20px;
   }
 
-  .about-me-section img {
-    width: 200px; /* Smaller image on smaller screens */
+  .about-me-section .profile-image {
+    width: 200px;
   }
 }
 
@@ -222,11 +222,11 @@ body {
 .skills-section h2 {
   font-size: 2.75em; /* Slightly larger */
   margin-bottom: 50px;
-  color: #50a2bb; /* Darker text */
+  color: #ffffff; /* Darker text */
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
-  border-bottom: 3px solid #21a593; /* Purple underline */
+  border-bottom: 3px solid #007bff; /* Purple underline */
 }
 
 .skills-carousel-container {
@@ -306,10 +306,10 @@ body {
 
 .carousel-navigation button {
   background: none;
-  border: 2px solid #21a593; /* Purple border for buttons */
+  border: 2px solid #007bff; /* Purple border for buttons */
   font-size: 1.4em;
   cursor: pointer;
-  color: #21a593;
+  color: #007bff;
   padding: 8px 15px;
   border-radius: 8px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -318,7 +318,7 @@ body {
 
 .carousel-navigation button:hover,
 .carousel-navigation button:focus {
-  background-color: #21a593;
+  background-color: #007bff;
   color: #fff;
 }
 
@@ -346,14 +346,14 @@ body {
 }
 
 .page-indicator.active {
-  background-color: #21a593;
-  border-color: #21a593;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .page-indicator:hover,
 .page-indicator:focus {
-  background-color: #21a593;
-  border-color: #21a593;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 /* Responsive adjustments */
@@ -410,12 +410,12 @@ body {
 .education-section h2 {
   font-size: 2.75em;
   margin-bottom: 50px;
-  color: #50a2bb; /* Primary teal */
+  color: #000000; /* Primary teal */
   text-align: center;
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
-  border-bottom: 3px solid #50a2bb; /* Lighter teal underline */
+  border-bottom: 3px solid #007bff; /* Lighter teal underline */
 }
 
 .education-item {
@@ -424,7 +424,7 @@ body {
   border-radius: 12px;
   background-color: #fff;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
-  border: 1px solid #50a2bb; /* Light teal border */
+  border: 1px solid #007bff; /* Light teal border */
   transition: transform 0.2s ease-in-out;
 }
 
@@ -437,17 +437,17 @@ body {
   font-size: 1.8em;
   margin-top: 0;
   margin-bottom: 15px;
-  color: #50a2bb; /* Primary teal */
+  color: #000000; /* Primary teal */
 }
 
 .education-item .degree {
-  color: #50a2bb; /* Medium teal */
+  color: #000000; /* Medium teal */
   font-weight: 500;
   margin-bottom: 10px;
 }
 
 .education-item .years {
-  color: #50a2bb; /* Light teal */
+  color: #007bff; /* Light teal */
   font-style: italic;
   margin-bottom: 20px;
 }
@@ -456,12 +456,12 @@ body {
   color: #546e7a; /* Dark grayish teal */
   line-height: 1.6;
   margin-bottom: 20px;
-  border-left: 3px solid #6dd6c1; /* Lighter teal highlight */
+  border-left: 3px solid #007bff; /* Lighter teal highlight */
   padding-left: 15px;
 }
 
 .education-item button {
-  background-color: #50a2bb; /* Primary teal */
+  background-color: #007bff; /* Primary teal */
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -474,11 +474,11 @@ body {
 
 .education-item button:hover,
 .education-item button:focus {
-  background-color: #4db6ac; /* Medium teal */
+  background-color: #007bff; /* Medium teal */
 }
 
 .education-item button:active {
-  background-color: #187968; /* Darker teal on active */
+  background-color: #007bff; /* Darker teal on active */
 }
 
 /* Responsive adjustments */
@@ -515,20 +515,21 @@ body {
 }
 
 /* Projects Section - Updated for Modal */
+/* Projects Section Styles */
 .projects-section {
   padding: 80px 30px;
-  background-color: #f9fbe7; /* Light yellow-green */
+  background-color: #000000; /* Light yellow-green */
   text-align: center;
 }
 
 .projects-section h2 {
   font-size: 2.75em;
   margin-bottom: 50px;
-  color: #388e3c; /* Darker green */
+  color: #ffffff; /* Darker green */
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
-  border-bottom: 3px solid #81c784; /* Lighter green underline */
+  border-bottom: 3px solid #007bff; /* Lighter green underline */
 }
 
 .project-filters {
@@ -536,49 +537,50 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
 }
 
 .project-filters button {
   padding: 14px 30px;
-  border: 2px solid #4caf50; /* Green border */
+  border: 2px solid #007bff; /* Green border */
   border-radius: 10px;
   cursor: pointer;
   font-size: 1.1em;
   background-color: transparent;
-  color: #4caf50;
+  color: #007bff;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
   outline: none;
+  margin-bottom: 10px; /* Add some margin for wrapping */
 }
 
 .project-filters button.active {
-  background-color: #4caf50;
+  background-color: #007bff;
   color: #fff;
-  border-color: #4caf50;
+  border-color: #007bff;
 }
 
 .project-filters button:hover,
 .project-filters button:focus {
-  background-color: #4caf50;
+  background-color: #007bff;
   color: #fff;
   transform: scale(1.08);
 }
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust min width */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
-/* مختصر Project Card Style */
-.project-card{
+/* Project Card Style */
+.project-card {
   border-radius: 12px;
   overflow: hidden;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-  text-align: center; /* Center content within the card */
-  /* width: auto;
-  height: auto; */
+  text-align: center;
+  border: 1px solid #007bff;
 }
 
 .project-card:hover,
@@ -592,17 +594,18 @@ body {
   height: auto;
   display: block;
   border-bottom: 1px solid #e0e0e0;
+  object-fit: cover; /* Ensure images cover the area nicely */
 }
 
 .project-card h3 {
   font-size: 1.4em;
   margin-top: 15px;
   margin-bottom: 10px;
-  color: #388e3c;
+  color: #000000;
 }
 
-.project-card.view-more-btn {
-  background-color: #4caf50;
+.project-card .view-more-btn {
+  background-color: #007bff;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -616,7 +619,7 @@ body {
 
 .project-card .view-more-btn:hover,
 .project-card .view-more-btn:focus {
-  background-color: #43a047;
+  background-color: #007bff;
   transform: scale(1.05);
 }
 
@@ -650,19 +653,23 @@ body {
   font-size: 2em;
   margin-top: 0;
   margin-bottom: 20px;
-  color: #388e3c;
+  color: #007bff;
 }
 
 .project-modal .modal-content p {
   color: #555;
   line-height: 1.7;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.project-modal .modal-content p:last-child {
+  margin-bottom: 30px; /* Add some space before the close button */
 }
 
 .project-modal .modal-content a {
   display: inline-block;
   padding: 12px 25px;
-  background-color: #4caf50;
+  background-color: #007bff;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
@@ -672,7 +679,7 @@ body {
 
 .project-modal .modal-content a:hover,
 .project-modal .modal-content a:focus {
-  background-color: #43a047;
+  background-color: #007bff;
   transform: scale(1.05);
 }
 
@@ -694,7 +701,46 @@ body {
   color: #333;
 }
 
-/* Responsive adjustments for modal */
+/* Responsive adjustments for the projects section */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 60px 20px;
+  }
+
+  .projects-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+
+  .project-filters {
+    margin-bottom: 30px;
+    gap: 10px;
+  }
+
+  .project-filters button {
+    padding: 12px 25px;
+    font-size: 1em;
+    margin-bottom: 8px;
+  }
+
+  .project-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min width for smaller screens */
+    gap: 20px;
+  }
+
+  .project-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+
+  .project-card .view-more-btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+  }
+}
+
+/* Responsive adjustments for the modal */
 @media (max-width: 768px) {
   .project-modal .modal-content {
     padding: 30px;
@@ -863,7 +909,7 @@ body {
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
-  border-bottom: 3px solid #28a745; /* Green underline */
+  border-bottom: 3px solid #007bff; /* Green underline */
 }
 
 .certificates-filter {
@@ -875,23 +921,23 @@ body {
 
 .certificates-filter button {
   padding: 12px 25px;
-  border: 2px solid #28a745; /* Green border */
+  border: 2px solid #007bff; /* Green border */
   border-radius: 8px;
   cursor: pointer;
   font-size: 1em;
   background-color: transparent;
-  color: #28a745;
+  color: #007bff;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   outline: none;
 }
 
 .certificates-filter button.active {
-  background-color: #28a745;
+  background-color: #007bff;
   color: #fff;
 }
 
 .certificates-filter button:hover {
-  background-color: #28a745;
+  background-color: #007bff;
   color: #fff;
 }
 
@@ -939,7 +985,7 @@ body {
 }
 
 .expand-button {
-  background-color: #28a745;
+  background-color: #007bff;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -951,7 +997,7 @@ body {
 }
 
 .expand-button:hover {
-  background-color: #1e7e34;
+  background-color: #007bff;
 }
 
 .certificate-details {
@@ -1036,119 +1082,252 @@ body {
 }
 
 
-/* Blogs Section */
+/* Blogs Section Styles */
 .blogs-section {
   padding: 80px 30px;
-  background-color: #f0f9ff; /* Very light blue */
+  background-color: #f7f7f7; /* Light background */
+  text-align: center;
 }
 
 .blogs-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #2c3e50;
-  text-align: left;
+  font-size: 2.75em;
+  margin-bottom: 50px;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #007bff; /* Blue underline */
+}
+
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 20px;
 }
 
 .blog-post {
-  margin-bottom: 40px;
-  padding: 30px;
-  border-radius: 10px;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex; /* Use flexbox for image and content alignment */
+  flex-direction: column;
 }
 
-.blog-post:hover,
-.blog-post:focus {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.blog-post h3 {
-  font-size: 1.4em;
+.blog-image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+  object-fit: cover; /* Ensure image covers the area without distortion */
+  max-height: 200px; /* Optional: limit image height */
+}
+
+.blog-content {
+  padding: 25px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push title and read more apart */
+  flex-grow: 1; /* Allow content to take up remaining space */
+}
+
+.blog-content h3 {
+  font-size: 1.6em;
   margin-top: 0;
   margin-bottom: 15px;
-  color: #2c3e50;
+  color: #333;
 }
 
-.blog-post p {
-  color: #666;
+.blog-description {
+  color: #555;
+  line-height: 1.6;
   margin-bottom: 20px;
 }
 
-.blog-post a {
-  color: #3498db;
+.read-more-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease-in-out;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  align-self: flex-start; /* Align to the start of the content area */
 }
 
-.blog-post a:hover,
-.blog-post a:focus {
-  color: #2980b9;
+.read-more-link:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blogs-section {
+    padding: 60px 20px;
+  }
+
+  .blogs-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+
+  .blog-list {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .blog-post {
+    flex-direction: column; /* Stack image and content */
+  }
+
+  .blog-content {
+    padding: 20px;
+  }
+
+  .blog-content h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+
+  .blog-description {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+  }
+
+  .read-more-link {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}
 /* Footer Section */
 .footer-section {
   background-color: #2c3e50;
   color: #fff;
   padding: 40px 30px;
   text-align: center;
+  position: relative; /* For potential pseudo-elements */
 }
 
-.footer-section p {
+.footer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #3498db, #8e44ad); /* Subtle highlight line */
+}
+
+.footer-section .copyright {
   margin-bottom: 15px;
   font-size: 1em;
   opacity: 0.8;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.footer-section .copyright:hover {
+  opacity: 1;
+  transform: scale(1.02);
 }
 
 .social-links {
   margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .social-links a {
   color: #fff;
-  margin: 0 20px;
   font-size: 1.5em;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  opacity: 0.8;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  border-radius: 50%; /* Make them circular */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
 }
 
 .social-links a:hover,
 .social-links a:focus {
   color: #3498db;
+  opacity: 1;
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-links a i {
+  /* Icon styling is inherited from the parent a tag */
+}
+
+.footer-section .contact-email {
+  margin-top: 20px;
+  font-size: 0.9em;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.footer-section .contact-email:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* Specific color for each social icon on hover (optional) */
+.social-links a.linkedin:hover,
+.social-links a.linkedin:focus {
+  color: #0077b5; /* LinkedIn blue */
+}
+
+.social-links a.github:hover,
+.social-links a.github:focus {
+  color: #333; /* GitHub dark gray */
+}
+
+.social-links a.twitter:hover,
+.social-links a.twitter:focus {
+  color: #1da1f2; /* Twitter blue */
+}
+
+.social-links a.email:hover,
+.social-links a.email:focus {
+  color: #ea4335; /* Gmail red (can be a generic email color) */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  .footer-section {
+    padding: 30px 20px;
   }
 
-  .education-section,
-  .projects-section {
-    padding: 60px 20px;
+  .footer-section .copyright {
+    font-size: 0.9em;
+    margin-bottom: 10px;
   }
 
-  .project-list {
-    grid-template-columns: 1fr;
+  .social-links {
+    gap: 15px;
+    margin-top: 20px;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr;
+  .social-links a {
+    font-size: 1.3em;
+    width: 35px;
+    height: 35px;
   }
 
-  .hero-section {
-    padding: 60px 20px;
-  }
-
-  .hero-section h2 {
-    font-size: 2.5em;
-  }
-
-  .hero-section p {
-    font-size: 1.1em;
+  .footer-section .contact-email {
+    font-size: 0.8em;
+    margin-top: 15px;
   }
 }
