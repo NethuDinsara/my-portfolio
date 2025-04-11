@@ -1,17 +1,7 @@
 import React, { useState } from 'react';
 
 function Education() {
-  // const [count,setCount] =useState(0);
-  // const increment = ()=>{
-  //   setCount(count+1);
-  // }
 
-  // return(
-  //   <div>
-  //     <p>Count: {count}</p>
-  //     <button onClick={increment}>Obapan</button>
-  //   </div>
-// )
   const educationList = [
     {
       institution: 'University of Westminster',
@@ -23,7 +13,7 @@ function Education() {
       institution: 'D.S.Senanayake College, Colombo 07',
       degree: 'Advanced Level - Biological Stream',
       years: '2022 - 2023',
-      description: 'Completed an intensive online program covering advanced React concepts, state management (Redux, Context API), testing, and performance optimization.',
+      description: 'Completed advanced level in biological stream , obtained A,B,C passes for chemistry, Biology and Physics respectively',
     },
   ];
 

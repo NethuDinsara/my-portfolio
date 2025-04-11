@@ -6,6 +6,7 @@ import linkImg from '../assets/images/linkedin.png'
 import moraImg from '../assets/images/moratuwa.png'
 import iitImg from '../assets/images/ieeeiit.png'
 import colaImg from '../assets/images/cola.png'
+import hultImg from '../assets/images/hultpz.png'
 
 const Certificates = () => {
   const allCertificates = [
@@ -117,6 +118,15 @@ const Certificates = () => {
         credentialURL: 'https://drive.google.com/file/d/1ae2F2sOTXeCBMOTeiDGg2u3MjsR8-qGU/view?usp=sharing',
         image: iitImg,
     },
+    {
+      id: 13,
+      title: 'Pitchathon - Qualifier',
+      category: 'Non-Technical',
+      issuingOrganization: 'Hult Prize',
+      dateIssued: '2024-03',
+      credentialURL: 'https://drive.google.com/file/d/1KsgRdKjlGHKL91CxY5tYeuvpYxrenpTR/view?usp=sharing',
+      image: hultImg,
+  },
     // Add more certificates 
   ];
 

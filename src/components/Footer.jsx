@@ -15,7 +15,7 @@ function Footer() {
       </p>
       <div className="social-links">
         <a
-          href="https://www.linkedin.com/in/yourlinkedinprofile" // Replace with your actual LinkedIn URL
+          href="https://www.linkedin.com/in/nethu-hettihewa-b84897224/" // Replace with your actual LinkedIn URL
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -24,7 +24,7 @@ function Footer() {
           <FontAwesomeIcon icon={faLinkedin} />
         </a>
         <a
-          href="https://github.com/yourgithubprofile" // Replace with your actual GitHub URL
+          href="https://github.com/NethuDinsara" // Replace with your actual GitHub URL
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -33,7 +33,7 @@ function Footer() {
           <FontAwesomeIcon icon={faGithub} />
         </a>
         <a
-          href="https://www.instagram.com/yourinstagramhandle" // Replace with your actual Instagram URL
+          href="https://www.instagram.com/dinzzara/?igsh=ZHp0ZzFkcHh2azE%3D&utm_source=qr" // Replace with your actual Instagram URL
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"

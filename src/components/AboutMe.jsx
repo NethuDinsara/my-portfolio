@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import profileImage from '../assets/images/dinsara.png'; // Ensure correct import 
 
 function AboutMe() {
   const [isHovered, setIsHovered] = useState(false);
@@ -8,9 +9,9 @@ function AboutMe() {
       className="about-me-section"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ transform: isHovered ? 'scale(1.03)' : 'scale(1)', transition: 'transform 0.3s ease-in-out' }}
     >
       <div className="about-me-content">
+        {/* <h2>About Me</h2> Added a title for consistency */}
         <p>
           Hello! I'm Dinsara Hettihewa, a passionate and creative Software Engineering undergrad focused on building innovative full-stack solutions. My journey in technology is fueled by a desire to create impactful digital experiences.
         </p>
@@ -21,7 +22,7 @@ function AboutMe() {
           {isHovered && <p className="hover-message">Thanks for exploring my profile!</p>}
         </div>
       </div>
-      <img className="" src="src/assets/images/dinsara.png" alt="Your Profile" />
+      <img src={profileImage} alt="Your Profile" className="profile-image" /> {/* Added a class for styling */}
     </div>
   );
 }

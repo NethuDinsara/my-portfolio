@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 const Extracurricular = () => {
   const activities = [
-    { id: 1, title: "Volunteering", image: "/src/assets/images/extracurricular-placeholder.png", description: "Dedicated to helping communities through various initiatives, fostering a sense of social responsibility and making a tangible difference in the lives of others." },
-    { id: 2, title: "Hackathons", image: "/src/assets/images/extracurricular-placeholder.png", description: "Actively participated in over 5 hackathons, collaborating with diverse teams to develop innovative solutions to real-world problems under tight deadlines. This experience has honed my problem-solving, teamwork, and rapid prototyping skills." },
-    { id: 3, title: "Leo Club", image: "/src/assets/images/extracurricular-placeholder.png", description: "Served as an active member of the Leo Club, the youth wing of Lions Clubs International, engaging in community service projects, developing leadership skills, and contributing to philanthropic endeavors." },
-    { id: 4, title: "Rotaract Club", image: "/src/assets/images/extracurricular-placeholder.png", description: "Engaged with the Rotaract Club, a Rotary-sponsored service club for young adults, participating in projects focused on community development, international understanding, and leadership development. This involvement has enhanced my teamwork and organizational abilities." },
+    { id: 1, title: "Project Chairperson - Sundown Motor Fest",  description: "Dedicated to helping communities through various initiatives, fostering a sense of social responsibility and making a tangible difference in the lives of others." },
+    { id: 2, title: "Treasurer - Leo Club of Homagama Central",  description: "Actively participated in over 5 hackathons, collaborating with diverse teams to develop innovative solutions to real-world problems under tight deadlines. This experience has honed my problem-solving, teamwork, and rapid prototyping skills." },
+    { id: 3, title: "Director of Public Relationships - Rotaract Club of Cinnamon Gardens", description: "Served as an active member of the Leo Club, the youth wing of Lions Clubs International, engaging in community service projects, developing leadership skills, and contributing to philanthropic endeavors." },
+    { id: 4, title: "Membership Chairperson",  description: "Engaged with the Rotaract Club, a Rotary-sponsored service club for young adults, participating in projects focused on community development, international understanding, and leadership development. This involvement has enhanced my teamwork and organizational abilities." },
     // Add more activities as needed
   ];
 
