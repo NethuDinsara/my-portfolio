@@ -37,7 +37,7 @@ const projectsData = [
     category: 'Web',
     description: 'My personal portfolio website to showcase my skills, projects, and blog posts. Built with React and styled with modern CSS.',
     technologies: ['React', 'CSS', 'Vite'],
-    link: '#',
+    link: 'https://github.com/NethuDinsara/my-portfolio',
     image: portFImg,
   },
   {
