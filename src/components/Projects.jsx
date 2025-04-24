@@ -10,7 +10,7 @@ const projectsData = [
     category: 'Web',
     description: 'A full-stack e-commerce platform allowing users to browse products, add to cart, and process orders. Implemented user authentication and admin dashboard.',
     technologies: ['React'],
-    link: '#',
+    link: 'https://github.com/NethuDinsara/alpha-medi-lab',
     image: alphaImg,
   },
   {
