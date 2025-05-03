@@ -30,6 +30,12 @@ function Blogs() {
       description: 'AI is transforming the way we create content, making it faster, smarter, and more engaging. Whether you’re a blogger, marketer, or creator, these tools can help you craft incredible content with ease.',
       image: contentImg, // Placeholder image
     },
+    {
+      title: 'The Best AI Tools for Content Creation in 2025',
+      link: 'https://medium.com/@neth.hettihewa/the-best-ai-tools-for-content-creation-in-2025-b07ea5513732',
+      description: 'AI is transforming the way we create content, making it faster, smarter, and more engaging. Whether you’re a blogger, marketer, or creator, these tools can help you craft incredible content with ease.',
+      image: contentImg, // Placeholder image
+    },
     // Add more blog posts with image paths
   ];
 
